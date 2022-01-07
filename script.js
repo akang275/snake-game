@@ -1,7 +1,7 @@
 // console.log(JSON.parse(JSON.stringify(arr)));
 
 // variables
-const TILESIZE = 50;
+const TILESIZE = 5;
 	// default 100-150
 const GAMETICK = 150;
 
@@ -135,8 +135,8 @@ function spawnApple() {
 }
 
 function setMargin(div, coords) {
-	div.style.marginLeft = coords[0] * TILESIZE + 'px';
-	div.style.marginTop = coords[1] * TILESIZE + 'px';
+	div.style.marginLeft = coords[0] * TILESIZE + 'vh';
+	div.style.marginTop = coords[1] * TILESIZE + 'vh';
 }
 
 function addSegment() {
@@ -178,9 +178,11 @@ function blurGame(toggle) {
 	let toggleList = document.querySelectorAll('.segment, .apple');
 	for (let element of toggleList) {
 		if (toggle) {
-			element.classList.add('blurred');
+			//element.classList.add('blurred');
 		}
-		else {element.classList.remove('blurred');}
+		else {
+			//element.classList.remove('blurred');
+		}
 	}
 }
 

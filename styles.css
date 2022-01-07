@@ -3,12 +3,26 @@
 #3b59d0
 #6f9be2
 #c6dcf6
+
+original variables
+
+game window size: 750px
+
+.grid:
+	border: 10px solid #0d4e3f;
+	border-radius: 10px;
+	box-shadow: 0 0 3px 3px #0d4e3f;
+	grid-template-rows: repeat(15, 50px);
+	grid-template-columns: repeat(15, 50px);
+
+
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300&family=Roboto+Condensed:wght@700&display=swap');
 
 :root {
-	--game-size: 750px;
+	--game-size: 75vh;
+	--tile-size: calc(var(--game-size)/15)
 }
 
 body {
@@ -21,10 +35,10 @@ body {
 	margin: auto;
 	display: grid;
 	border: 10px solid #0d4e3f;
-	border-radius: 10px;
-	box-shadow: 0 0 3px 3px #0d4e3f;
-	grid-template-rows: repeat(15, 50px);
-	grid-template-columns: repeat(15, 50px);
+	border-radius: calc(var(--game-size)/75);
+	box-shadow: 0 0 calc(var(--game-size)/250) calc(var(--game-size)/250) #0d4e3f;
+	grid-template-rows: repeat(15, calc(--game-size/15));
+	grid-template-columns: repeat(15, calc(--game-size/15));
 }
 
 .blurred {
@@ -37,85 +51,58 @@ body {
 }
 
 .segment {
-	height: 44px;
-	width: 44px;
+	height: calc(var(--tile-size) - 1vh);
+	width: calc(var(--tile-size) - 1vh);
 	position: absolute;
-	border: 3px solid #64bd68;
-	border-radius: 15px;
+	border: 0.5vh solid #64bd68;
+	border-radius: 20%;
 	background-color: #95d488;
 }
 
 .apple {
-	height: 50px;
-	width: 50px;
+	height: var(--tile-size);
+	width: var(--tile-size);
 	position: absolute;
 	background-color: #ee797d;
 	border-radius: 50%;
 }
 
 .score {
-	width: 750px;
-	height: 75px;
+	width: var(--game-size);
+	height: calc(var(--game-size)/10);
 	margin: auto;
 	color: #c6dcf6;
-	font-size: 50px;
+	font-size: calc(var(--game-size)/15);
 	font-family: 'Roboto Condensed', sans-serif;
 	text-shadow: 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f;
 	/*background-color: #c6dcf6;*/
 }
 
 .text-container {
+	border: 1px solid;
+	--game-size-halved: calc(var(--game-size)/2);
 	position: absolute;
 	color: #c6dcf6;
 	text-shadow: 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f;
-	width: 400px;
+	width: var(--game-size-halved);
 	text-align: center;
-	margin-left: calc(var(--game-size)/2 - 200px);
-	margin-top: calc(var(--game-size)/2 - 115px);
+	margin-left: calc(var(--game-size-halved) - var(--game-size-halved)/2);
+	margin-top: calc(var(--game-size-halved) - var(--game-size)/7.5);
 	font-family: 'Roboto Condensed', sans-serif;
 	z-index: 1;
 }
 
 .big-text {
-	font-size: 100px;
-	line-height: 100px;
+	font-size: calc(var(--game-size)/7.5);
+	line-height: calc(var(--game-size)/7.5);
 }
 
 .small-text {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: calc(var(--game-size)/25);
+	line-height: calc(var(--game-size)/25);
 }
 
 .paused {
 	position: absolute;
 	font-family: 'Roboto Condensed', sans-serif;
 }
-
-/*
-.snake {
-	height: 50px;
-	width: 50px;
-	position: absolute;
-	background-color: yellow;
-}
-
-.right {
-	border: solid;
-	border-color: green;
-}
-
-.left {
-	border: solid;
-	border-color: blue;
-}
-
-.up {
-	border: solid;
-	border-color: purple;
-}
-
-.down {
-	border: solid;
-	border-color: black;
-}
-*/
