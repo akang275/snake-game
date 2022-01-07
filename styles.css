@@ -1,0 +1,121 @@
+/* --- color palette ---
+#0c1449
+#3b59d0
+#6f9be2
+#c6dcf6
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300&family=Roboto+Condensed:wght@700&display=swap');
+
+:root {
+	--game-size: 750px;
+}
+
+body {
+	background-color: #a0cfe5;
+}
+
+.grid {
+	height: var(--game-size);
+	width: var(--game-size);
+	margin: auto;
+	display: grid;
+	border: 10px solid #0d4e3f;
+	border-radius: 10px;
+	box-shadow: 0 0 3px 3px #0d4e3f;
+	grid-template-rows: repeat(15, 50px);
+	grid-template-columns: repeat(15, 50px);
+}
+
+.blurred {
+	filter: blur(5px);
+}
+
+.tile {
+	background-color: #588e73;
+	/*border: 1px solid;*/
+}
+
+.segment {
+	height: 44px;
+	width: 44px;
+	position: absolute;
+	border: 3px solid #64bd68;
+	border-radius: 15px;
+	background-color: #95d488;
+}
+
+.apple {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	background-color: #ee797d;
+	border-radius: 50%;
+}
+
+.score {
+	width: 750px;
+	height: 75px;
+	margin: auto;
+	color: #c6dcf6;
+	font-size: 50px;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-shadow: 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f;
+	/*background-color: #c6dcf6;*/
+}
+
+.text-container {
+	position: absolute;
+	color: #c6dcf6;
+	text-shadow: 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f, 0 0 7px #0d4e3f;
+	width: 400px;
+	text-align: center;
+	margin-left: calc(var(--game-size)/2 - 200px);
+	margin-top: calc(var(--game-size)/2 - 115px);
+	font-family: 'Roboto Condensed', sans-serif;
+	z-index: 1;
+}
+
+.big-text {
+	font-size: 100px;
+	line-height: 100px;
+}
+
+.small-text {
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.paused {
+	position: absolute;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*
+.snake {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	background-color: yellow;
+}
+
+.right {
+	border: solid;
+	border-color: green;
+}
+
+.left {
+	border: solid;
+	border-color: blue;
+}
+
+.up {
+	border: solid;
+	border-color: purple;
+}
+
+.down {
+	border: solid;
+	border-color: black;
+}
+*/
