@@ -103,8 +103,6 @@ function moveSnake() {
 			coords[0][0] += xv;
 			coords[0][1] += yv;
 		}
-		//segs[c].style.marginLeft = coords[c][0] * TILESIZE + 'px';
-		//segs[c].style.marginTop = coords[c][1] * TILESIZE + 'px';
 	}
 	if (checkCollision()) {
 		console.log('game over');
@@ -178,10 +176,10 @@ function blurGame(toggle) {
 	let toggleList = document.querySelectorAll('.segment, .apple');
 	for (let element of toggleList) {
 		if (toggle) {
-			//element.classList.add('blurred');
+			element.classList.add('blurred');
 		}
 		else {
-			//element.classList.remove('blurred');
+			element.classList.remove('blurred');
 		}
 	}
 }

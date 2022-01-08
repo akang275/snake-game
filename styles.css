@@ -34,7 +34,7 @@ body {
 	width: var(--game-size);
 	margin: auto;
 	display: grid;
-	border: 10px solid #0d4e3f;
+	border: 1.5vh solid #0d4e3f;
 	border-radius: calc(var(--game-size)/75);
 	box-shadow: 0 0 calc(var(--game-size)/250) calc(var(--game-size)/250) #0d4e3f;
 	grid-template-rows: repeat(15, calc(--game-size/15));
@@ -79,7 +79,7 @@ body {
 }
 
 .text-container {
-	border: 1px solid;
+	/*border: 1px solid;*/
 	--game-size-halved: calc(var(--game-size)/2);
 	position: absolute;
 	color: #c6dcf6;
